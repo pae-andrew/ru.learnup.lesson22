@@ -1,0 +1,15 @@
+create table "order"
+(
+    id         serial
+        constraint order_pk
+            primary key,
+    user_name  text not null,
+    book_name  text not null,
+    book_count integer default 1
+);
+
+alter table "order"
+    owner to bsqkwjfbjuwvks;
+
+create unique index order_id_uindex
+    on "order" (id);

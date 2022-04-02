@@ -1,0 +1,15 @@
+create table author
+(
+    id      serial
+        constraint author_pk
+            primary key,
+    name    text not null,
+    surname text not null,
+    books   text
+);
+
+alter table author
+    owner to bsqkwjfbjuwvks;
+
+create unique index author_id_uindex
+    on author (id);
